@@ -250,7 +250,7 @@ module GiphyClient
     def build_request_url(path)
       # Add leading and trailing slashes to path
       path = "/#{path}".gsub(/\/+/, '/')
-      URI.encode(@config.base_url + path)
+      @config.base_url + URI.encode_www_form_component(path)
     end
 
     # Builds the HTTP request body
