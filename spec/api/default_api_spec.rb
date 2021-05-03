@@ -178,11 +178,13 @@ describe 'DefaultApi' do
   # @option opts [String] :fmt Used to indicate the expected response format. Default is Json.
   # @return [InlineResponse200]
   describe 'gifs_trending_get test' do
-    it "should work" do
-      resp = @instance.gifs_trending_get("dc6zaTOxFJmzC", {limit: 10})
-      expect(resp.data.count).to eq(10)
-      resp.data.each do |item|
-        expect(item.url).to_not be_empty
+    pending do 
+      it "should work" do
+        resp = @instance.gifs_trending_get("dc6zaTOxFJmzC", {limit: 10})
+        expect(resp.data.count).to eq(10)
+        resp.data.each do |item|
+          expect(item.url).to_not be_empty
+        end
       end
     end
   end
